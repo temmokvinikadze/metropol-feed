@@ -59,6 +59,7 @@ def fake_fetch(url):
 def main():
     bf.fetch = fake_fetch
     bf.MIN_ITEMS = 1
+    bf.INCLUDE_PROJECTS = {"kavtaradze", "batumi-oval"}
     ns = {"g": "http://base.google.com/ns/1.0"}
     with tempfile.TemporaryDirectory() as d:
         assert bf.main(d) == 0

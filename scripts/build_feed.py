@@ -30,6 +30,11 @@ UA = (
 INCLUDE_TYPES = {"residential", "აპარტამენტი"}
 AVAILABLE_STATUS = "თავისუფალი"
 
+# Which projects (site slugs) go into the catalog. Empty env value = all projects.
+INCLUDE_PROJECTS = {
+    x.strip() for x in os.environ.get("INCLUDE_PROJECTS", "kavtaradze,ortachala").split(",") if x.strip()
+}
+
 # Price in the site data is USD. Set PRICE_CURRENCY=GEL to convert with /api/rate.
 PRICE_CURRENCY = os.environ.get("PRICE_CURRENCY", "GEL").upper()
 MIN_ITEMS = int(os.environ.get("MIN_ITEMS", "50"))  # safety net: don't publish an empty feed
@@ -295,6 +300,7 @@ def main(out_dir: str = ".") -> int:
         if f.get("flatStatus") == AVAILABLE_STATUS
         and f.get("flatTypeName") in INCLUDE_TYPES
         and f.get("projectID") in proj
+        and (not INCLUDE_PROJECTS or proj[f["projectID"]]["slug"] in INCLUDE_PROJECTS)
     ]
 
     stats = {}

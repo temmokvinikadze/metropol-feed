@@ -33,6 +33,7 @@ jobs:
       - name: Build feeds from metropol.ge
         env:
           PRICE_CURRENCY: GEL   # GEL = lari via metropol.ge/api/rate; USD = original CRM price
+          INCLUDE_PROJECTS: "kavtaradze,ortachala"   # slugs, comma-separated; empty = all projects
           MIN_ITEMS: "50"
         run: python scripts/build_feed.py .
 

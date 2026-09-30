@@ -5,7 +5,7 @@ metropol.ge-ის თავისუფალი ბინებისა დ�
 ## როგორ მუშაობს
 
 - `scripts/build_feed.py` კითხულობს `https://www.metropol.ge/results` გვერდს. ამ გვერდზე მთელი მარაგია ჩაშენებული.
-- ფიდში შედის მხოლოდ **თავისუფალი** ობიექტები, რომელთა ტიპია `residential` ან `აპარტამენტი`. პარკინგი, მიწა, ოფისი და კომერციული ფართი არ შედის.
+- ფიდში შედის მხოლოდ **ქავთარაძისა და ორთაჭალის** პროექტების **თავისუფალი** ობიექტები, რომელთა ტიპია `residential` ან `აპარტამენტი`. პარკინგი, მიწა, ოფისი და კომერციული ფართი არ შედის.
 - GitHub Action ყოველ 4 საათში ერთხელ ეშვება. თუ მარაგი შეიცვალა, ახალ `feed.xml` / `feed_en.xml`-ს commit-ით ინახავს.
 - გაყიდული ბინა ფიდიდან ავტომატურად ქრება, ხოლო Meta scheduled feed-ის განახლებისას მას კატალოგიდანაც შლის.
 - თუ საიტის სტრუქტურა შეიცვალა და 50-ზე ნაკლები ობიექტი მოიძებნა, ფიდი **არ** გადაიწერება. ძველი რჩება და Action წითლად ჩავარდება, GitHub კი მეილს გამოგიგზავნის.
@@ -41,5 +41,6 @@ https://raw.githubusercontent.com/<OWNER>/<REPO>/main/feed_en.xml   ← English
 ## ცვლილებები
 
 - **ფასი დოლარში:** `.github/workflows/update-feed.yml`-ში შეცვალე `PRICE_CURRENCY: USD`.
+- **პროექტების შეცვლა:** workflow-ში `INCLUDE_PROJECTS` (slug-ები: `kavtaradze`, `ortachala`, `parallel`, `batumi-cube`, `batumi-oval`, `lisi`, `shindisi`, `bagebi`). ცარიელი = ყველა.
 - **სხვა ტიპების დამატება:** `scripts/build_feed.py`-ში შეცვალე `INCLUDE_TYPES`.
 - **ხელით განახლება:** Actions → *Update Meta catalog feed* → **Run workflow**.
