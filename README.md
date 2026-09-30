@@ -22,7 +22,7 @@ https://raw.githubusercontent.com/<OWNER>/<REPO>/main/feed_en.xml   ← English
 ## Meta-ში დაკავშირება
 
 1. Commerce Manager → **Catalog** → Data sources → **Add items** → **Data feed** → *Use a URL*.
-2. ჩასვი ზემოთ მოცემული ბმული. Currency: **USD**.
+2. ჩასვი ზემოთ მოცემული ბმული. Currency: **GEL**.
 3. Schedule: **Hourly** ან **Daily**. რადგან Action 4 საათში ერთხელ ეშვება, Daily-ც საკმარისია.
 4. Upload type: **Replace** (default). ასე გაყიდული ობიექტები კატალოგიდან თავისით წაიშლება.
 
@@ -32,7 +32,7 @@ https://raw.githubusercontent.com/<OWNER>/<REPO>/main/feed_en.xml   ← English
 |---|---|
 | `id` | `MP-<flatID>` CRM-იდან |
 | `title` | „2-საძინებლიანი ბინა, 115.9 მ² – ქავთარაძე, თბილისი“ |
-| `price` | ფასი USD-ში, როგორც CRM-შია |
+| `price` | ფასი ლარში: CRM-ის USD ფასი გადაყვანილი საიტის `/api/rate` კურსით, დამრგვალებული (როგორც საიტზე ჩანს) |
 | `link` | ბინის კონკრეტული გვერდი საიტზე |
 | `image_link` | ბინის რენდერი; თუ რენდერი არ არის, პროექტის ფოტო |
 | `item_group_id` | პროექტის slug |
@@ -40,6 +40,6 @@ https://raw.githubusercontent.com/<OWNER>/<REPO>/main/feed_en.xml   ← English
 
 ## ცვლილებები
 
-- **ფასი ლარში:** `.github/workflows/update-feed.yml`-ში შეცვალე `PRICE_CURRENCY: GEL`. ფასი საიტის `/api/rate` კურსით გადაიყვანება.
+- **ფასი დოლარში:** `.github/workflows/update-feed.yml`-ში შეცვალე `PRICE_CURRENCY: USD`.
 - **სხვა ტიპების დამატება:** `scripts/build_feed.py`-ში შეცვალე `INCLUDE_TYPES`.
 - **ხელით განახლება:** Actions → *Update Meta catalog feed* → **Run workflow**.

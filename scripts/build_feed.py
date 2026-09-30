@@ -31,7 +31,7 @@ INCLUDE_TYPES = {"residential", "აპარტამენტი"}
 AVAILABLE_STATUS = "თავისუფალი"
 
 # Price in the site data is USD. Set PRICE_CURRENCY=GEL to convert with /api/rate.
-PRICE_CURRENCY = os.environ.get("PRICE_CURRENCY", "USD").upper()
+PRICE_CURRENCY = os.environ.get("PRICE_CURRENCY", "GEL").upper()
 MIN_ITEMS = int(os.environ.get("MIN_ITEMS", "50"))  # safety net: don't publish an empty feed
 
 # Fallback images for units that have no render in the CRM
@@ -180,6 +180,11 @@ def build_item(flat: dict, project: dict, project_title: str, lang: str, rate: f
 
     # Description
     ppsm = num(flat.get("kvmPrice"))
+    if ppsm:
+        if PRICE_CURRENCY == "GEL":
+            ppsm_txt = f"{round(ppsm * rate):,} ₾".replace(",", " ")
+        else:
+            ppsm_txt = f"${round(ppsm):,}".replace(",", " " if lang == "ka" else ",")
     bits = []
     if lang == "ka":
         bits.append(f"{word} N{flat['flatNum']}, სართული {flat['floor']}, {fmt_num(area)} {sqm}")
@@ -192,7 +197,7 @@ def build_item(flat: dict, project: dict, project_title: str, lang: str, rate: f
         if flat.get("view"):
             bits.append(f"ხედი: {flat['view']}")
         if ppsm:
-            bits.append(f"${int(ppsm):,} / {sqm}".replace(",", " "))
+            bits.append(f"{ppsm_txt} / {sqm}")
         if flat.get("projectFinishDate"):
             bits.append(f"ჩაბარება: {flat['projectFinishDate']}")
         desc = f"„მეტროპოლის“ პროექტი „{project_title}“, {city}. " + ". ".join(bits) + "."
@@ -208,7 +213,7 @@ def build_item(flat: dict, project: dict, project_title: str, lang: str, rate: f
         if flat.get("view"):
             bits.append(f"View: {flat['view']}")
         if ppsm:
-            bits.append(f"${int(ppsm):,} per {sqm}")
+            bits.append(f"{ppsm_txt} per {sqm}")
         if flat.get("projectFinishDate"):
             bits.append(f"Completion: {flat['projectFinishDate']}")
         desc = f"Metropol – {project_title}, {city}. " + ". ".join(bits) + "."
@@ -217,7 +222,7 @@ def build_item(flat: dict, project: dict, project_title: str, lang: str, rate: f
         desc += " " + extra.strip()
 
     if PRICE_CURRENCY == "GEL":
-        price = f"{price_usd * rate:.2f} GEL"
+        price = f"{round(price_usd * rate)}.00 GEL"
     else:
         price = f"{price_usd:.2f} USD"
 
