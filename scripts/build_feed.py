@@ -227,9 +227,7 @@ def build_item(flat: dict, project: dict, project_title: str, lang: str, rate: f
     plan = flat.get("render") or ""
     plan = plan if plan.startswith("http") else ""
     renders = RENDER_URLS.get(slug) or [BASE + PROJECT_FALLBACK_IMAGE.get(slug, DEFAULT_IMAGE)]
-    # rotate the main render across flats so ads don't all look the same
-    k = int(re.sub(r"\D", "", str(flat.get("flatID"))) or 0) % len(renders)
-    image = renders[k]
+    image = renders[0]  # best full-size render first; the rest go to additional images
     extra_imgs = [u for u in renders if u != image] + ([plan] if plan else [])
 
     city_ka = flat.get("city") or ""
