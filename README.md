@@ -34,7 +34,8 @@ https://raw.githubusercontent.com/<OWNER>/<REPO>/main/feed_en.xml   ← English
 | `title` | „2-საძინებლიანი ბინა, 115.9 მ² – ქავთარაძე, თბილისი“ |
 | `price` | ფასი ლარში: CRM-ის USD ფასი გადაყვანილი საიტის `/api/rate` კურსით, დამრგვალებული (როგორც საიტზე ჩანს) |
 | `link` | ბინის კონკრეტული გვერდი საიტზე |
-| `image_link` | ბინის რენდერი; თუ რენდერი არ არის, პროექტის ფოტო |
+| `image_link` | პროექტის რენდერი (JPG-ად გადაყვანილი, `images/` საქაღალდიდან). ბინებზე რენდერები მონაცვლეობით ნაწილდება |
+| `additional_image_link` | დანარჩენი რენდერები + ბინის გეგმა |
 | `custom_label_0..4` | პროექტი / ქალაქი / საძინებლები / ფასის დიაპაზონი / დანიშნულება (საინვესტიციო, საცხოვრებელი). Product set-ების ფილტრებისთვის |
 
 ## ცვლილებები
@@ -43,3 +44,5 @@ https://raw.githubusercontent.com/<OWNER>/<REPO>/main/feed_en.xml   ← English
 - **პროექტების შეცვლა:** workflow-ში `INCLUDE_PROJECTS` (slug-ები: `kavtaradze`, `ortachala`, `parallel`, `batumi-cube`, `batumi-oval`, `lisi`, `shindisi`, `bagebi`). ცარიელი = ყველა.
 - **სხვა ტიპების დამატება:** `scripts/build_feed.py`-ში შეცვალე `INCLUDE_TYPES`.
 - **ხელით განახლება:** Actions → *Update Meta catalog feed* → **Run workflow**.
+
+- **რენდერების შეცვლა:** `scripts/build_feed.py`-ში `PROJECT_RENDERS` — თითო პროექტზე საიტის `/uploads/...` ბმულების სია.

@@ -52,6 +52,61 @@ PROJECT_FALLBACK_IMAGE = {
 }
 DEFAULT_IMAGE = "/og-default.jpg"
 
+# Project renders used as the main ad image (the CRM "render" per flat is a floor plan,
+# which goes into additional_image_link instead). Paths on www.metropol.ge.
+PROJECT_RENDERS = {
+    "kavtaradze": [
+        "/uploads/MP-03-111111-c9x6wDLLYNQji5KvTL2utZwHFAkWLN.jpg",
+        "/uploads/Web-21-OsAKQKRymL6WHyIMqDnsq1HkGIqj0K.png",
+        "/uploads/%25E1%2583%259A%25E1%2583%259D%25E1%2583%2591%25E1%2583%2598-nfKuf60vDLnPXAfawO4MpoyvM3Dq2Y.jpg",
+    ],
+    "ortachala": [
+        "/uploads/Blocks%20Ortachala-Wvp15UG93BmTXVT5XczTTNcra43AML.webp",
+        "/uploads/Untitlexxd-2-Zl85DHwb3xMaC7Vm8NiFt6bMKNybwk.png",
+    ],
+}
+# Renders are re-encoded as JPG into images/ and served from GitHub (Meta-friendly format).
+IMAGE_BASE_URL = os.environ.get("IMAGE_BASE_URL", "").rstrip("/")
+RENDER_URLS: dict[str, list[str]] = {}  # filled by prepare_renders()
+
+
+def prepare_renders(out_dir: str) -> None:
+    """Download project renders, convert to JPG (needs Pillow), and map slug -> public URLs."""
+    img_dir = os.path.join(out_dir, "images")
+    for slug, paths in PROJECT_RENDERS.items():
+        if INCLUDE_PROJECTS and slug not in INCLUDE_PROJECTS:
+            continue
+        urls = []
+        for n, path in enumerate(paths, 1):
+            src = BASE + path
+            name = f"{slug}-{n}.jpg"
+            dest = os.path.join(img_dir, name)
+            try:
+                if not IMAGE_BASE_URL:
+                    raise RuntimeError("IMAGE_BASE_URL not set")
+                from io import BytesIO
+                from PIL import Image  # type: ignore
+
+                req = urllib.request.Request(src, headers={"User-Agent": UA})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    im = Image.open(BytesIO(r.read()))
+                    im.load()
+                if im.mode != "RGB":
+                    bg = Image.new("RGB", im.size, (255, 255, 255))
+                    bg.paste(im, mask=im.convert("RGBA").split()[-1])
+                    im = bg
+                if max(im.size) > 2000:
+                    im.thumbnail((2000, 2000))
+                os.makedirs(img_dir, exist_ok=True)
+                im.save(dest, "JPEG", quality=88, optimize=True, progressive=True)
+                urls.append(f"{IMAGE_BASE_URL}/images/{name}")
+            except Exception as e:
+                print(f"warn: render {src} -> {e}; using original URL", file=sys.stderr)
+                if not path.endswith(".webp"):
+                    urls.append(src)
+        if urls:
+            RENDER_URLS[slug] = urls
+
 CITY_EN = {"თბილისი": "Tbilisi", "ბათუმი": "Batumi", "ბაგები": "Bagebi"}
 
 
@@ -169,9 +224,13 @@ def build_item(flat: dict, project: dict, project_title: str, lang: str, rate: f
     else:
         link = f"{BASE}{'/en' if lang == 'en' else ''}/projects"
 
-    image = flat.get("render") or ""
-    if not image.startswith("http"):
-        image = BASE + PROJECT_FALLBACK_IMAGE.get(slug, DEFAULT_IMAGE)
+    plan = flat.get("render") or ""
+    plan = plan if plan.startswith("http") else ""
+    renders = RENDER_URLS.get(slug) or [BASE + PROJECT_FALLBACK_IMAGE.get(slug, DEFAULT_IMAGE)]
+    # rotate the main render across flats so ads don't all look the same
+    k = int(re.sub(r"\D", "", str(flat.get("flatID"))) or 0) % len(renders)
+    image = renders[k]
+    extra_imgs = [u for u in renders if u != image] + ([plan] if plan else [])
 
     city_ka = flat.get("city") or ""
     city = city_ka if lang == "ka" else CITY_EN.get(city_ka, city_ka)
@@ -241,6 +300,7 @@ def build_item(flat: dict, project: dict, project_title: str, lang: str, rate: f
         "price": price,
         "link": link,
         "image_link": image,
+        "additional_image_link": ",".join(extra_imgs[:10]),
         "brand": "Metropol",
         "product_type": " > ".join(x for x in (city, project_title, beds or word) if x),
         "google_product_category": "",
@@ -278,6 +338,7 @@ def to_xml(items: list[dict], lang: str) -> str:
 
 # --------------------------------------------------------------------------- #
 def main(out_dir: str = ".") -> int:
+    prepare_renders(out_dir)
     html_ka = fetch(f"{BASE}/results")
     projects_ka, flats = load_inventory(html_ka)
     try:
