@@ -234,7 +234,6 @@ def build_item(flat: dict, project: dict, project_title: str, lang: str, rate: f
     purpose = flat.get("flatTypeNameInvestment") or ""
     return {
         "id": f"MP-{flat['flatID']}",
-        "item_group_id": slug,
         "title": title[:150],
         "description": desc[:5000],
         "availability": "in stock",
