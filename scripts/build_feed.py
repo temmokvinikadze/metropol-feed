@@ -52,8 +52,8 @@ PROJECT_FALLBACK_IMAGE = {
 }
 DEFAULT_IMAGE = "/og-default.jpg"
 
-# Project renders used as the main ad image (the CRM "render" per flat is a floor plan,
-# which goes into additional_image_link instead). Paths on www.metropol.ge.
+# Project exterior renders: fallback main image for flats without a CRM 3D render,
+# and an additional image for the rest. Paths on www.metropol.ge.
 PROJECT_RENDERS = {
     "kavtaradze": [
         "/uploads/MP-03-111111-c9x6wDLLYNQji5KvTL2utZwHFAkWLN.jpg",
@@ -227,8 +227,10 @@ def build_item(flat: dict, project: dict, project_title: str, lang: str, rate: f
     plan = flat.get("render") or ""
     plan = plan if plan.startswith("http") else ""
     renders = RENDER_URLS.get(slug) or [BASE + PROJECT_FALLBACK_IMAGE.get(slug, DEFAULT_IMAGE)]
-    image = renders[0]  # best full-size render first; the rest go to additional images
-    extra_imgs = [u for u in renders if u != image] + ([plan] if plan else [])
+    # Main image = the flat's own 3D interior render from the CRM; project renders as extras.
+    # Flats without one fall back to the project exterior render.
+    image = plan or renders[0]
+    extra_imgs = [u for u in renders[:1] if u != image]
 
     city_ka = flat.get("city") or ""
     city = city_ka if lang == "ka" else CITY_EN.get(city_ka, city_ka)
