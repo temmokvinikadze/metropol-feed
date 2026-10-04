@@ -88,6 +88,9 @@ def mirror_flat_renders(out_dir: str, flats: list[dict]) -> None:
         print("warn: Pillow missing; using CRM render URLs directly", file=sys.stderr)
         return
     from concurrent.futures import ThreadPoolExecutor
+    import threading
+
+    decode_lock = threading.Lock()  # renders are 8-10 MB PNGs: download in parallel, decode one at a time
 
     d = os.path.join(out_dir, "images", "flats")
     os.makedirs(d, exist_ok=True)
@@ -107,23 +110,26 @@ def mirror_flat_renders(out_dir: str, flats: list[dict]) -> None:
             return fid, name, "cached"
         try:
             req = urllib.request.Request(src, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=25) as r:
-                im = Image.open(BytesIO(r.read()))
+            with urllib.request.urlopen(req, timeout=60) as r:
+                raw = r.read()
+            with decode_lock:
+                im = Image.open(BytesIO(raw))
                 im.load()
-            if im.mode != "RGB":
-                bg = Image.new("RGB", im.size, (255, 255, 255))
-                bg.paste(im, mask=im.convert("RGBA").split()[-1])
-                im = bg
-            if max(im.size) > 1600:
-                im.thumbnail((1600, 1600))
-            im.save(path, "JPEG", quality=85, optimize=True, progressive=True)
+                if max(im.size) > 1600:
+                    im.thumbnail((1600, 1600))
+                if im.mode != "RGB":
+                    bg = Image.new("RGB", im.size, (255, 255, 255))
+                    bg.paste(im, mask=im.convert("RGBA").split()[-1])
+                    im = bg
+                im.save(path, "JPEG", quality=85, optimize=True, progressive=True)
+                del raw
             return fid, name, "new"
         except Exception as e:
             print(f"warn: flat render {src}: {e}", file=sys.stderr)
             return fid, name, "failed"
 
     keep, stats = set(), {"cached": 0, "new": 0, "failed": 0}
-    with ThreadPoolExecutor(max_workers=12) as ex:
+    with ThreadPoolExecutor(max_workers=8) as ex:
         for fid, name, st in ex.map(work, jobs):
             stats[st] += 1
             if st != "failed":
