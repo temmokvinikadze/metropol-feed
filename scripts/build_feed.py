@@ -68,6 +68,57 @@ PROJECT_RENDERS = {
 # Renders are re-encoded as JPG into images/ and served from GitHub (Meta-friendly format).
 IMAGE_BASE_URL = os.environ.get("IMAGE_BASE_URL", "").rstrip("/")
 RENDER_URLS: dict[str, list[str]] = {}  # filled by prepare_renders()
+FLAT_IMAGE_URLS: dict[str, str] = {}  # flatID -> mirrored interior render URL
+
+
+def mirror_flat_renders(out_dir: str, flats: list[dict]) -> None:
+    """Copy each flat's CRM interior render into images/flats/ as JPG (Meta-friendly host/format).
+    Already-mirrored files are reused; files of flats no longer listed are removed."""
+    if not IMAGE_BASE_URL:
+        return
+    try:
+        from io import BytesIO
+        from PIL import Image  # type: ignore
+    except ImportError:
+        print("warn: Pillow missing; using CRM render URLs directly", file=sys.stderr)
+        return
+    d = os.path.join(out_dir, "images", "flats")
+    os.makedirs(d, exist_ok=True)
+    keep, new, failed = set(), 0, 0
+    for f in flats:
+        src = f.get("render") or ""
+        if not src.startswith("http"):
+            continue
+        # file name changes when the CRM image changes
+        tag = re.sub(r"[^A-Za-z0-9]", "", src.rsplit("/", 1)[-1].rsplit(".", 1)[0])[-20:]
+        name = f"MP-{f['flatID']}-{tag}.jpg"
+        path = os.path.join(d, name)
+        if not os.path.exists(path):
+            try:
+                req = urllib.request.Request(src, headers={"User-Agent": UA})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    im = Image.open(BytesIO(r.read()))
+                    im.load()
+                if im.mode != "RGB":
+                    bg = Image.new("RGB", im.size, (255, 255, 255))
+                    bg.paste(im, mask=im.convert("RGBA").split()[-1])
+                    im = bg
+                if max(im.size) > 1600:
+                    im.thumbnail((1600, 1600))
+                im.save(path, "JPEG", quality=85, optimize=True, progressive=True)
+                new += 1
+            except Exception as e:
+                failed += 1
+                print(f"warn: flat render {src}: {e}", file=sys.stderr)
+                continue
+        keep.add(name)
+        FLAT_IMAGE_URLS[str(f["flatID"])] = f"{IMAGE_BASE_URL}/images/flats/{name}"
+    removed = 0
+    for fn in os.listdir(d):
+        if fn not in keep:
+            os.remove(os.path.join(d, fn))
+            removed += 1
+    print(f"flat renders: {len(keep)} mirrored ({new} new, {removed} removed, {failed} failed)")
 
 
 def prepare_renders(out_dir: str) -> None:
@@ -229,8 +280,8 @@ def build_item(flat: dict, project: dict, project_title: str, lang: str, rate: f
     renders = RENDER_URLS.get(slug) or [BASE + PROJECT_FALLBACK_IMAGE.get(slug, DEFAULT_IMAGE)]
     # Main image = the flat's own 3D interior render from the CRM; project renders as extras.
     # Flats without one fall back to the project exterior render.
-    image = plan or renders[0]
-    extra_imgs = [u for u in renders[:1] if u != image]
+    image = FLAT_IMAGE_URLS.get(str(flat.get("flatID"))) or plan or renders[0]
+    extra_imgs = []  # interior render only; no exterior shots
 
     city_ka = flat.get("city") or ""
     city = city_ka if lang == "ka" else CITY_EN.get(city_ka, city_ka)
@@ -362,6 +413,7 @@ def main(out_dir: str = ".") -> int:
         and f.get("projectID") in proj
         and (not INCLUDE_PROJECTS or proj[f["projectID"]]["slug"] in INCLUDE_PROJECTS)
     ]
+    mirror_flat_renders(out_dir, selected)
 
     stats = {}
     for lang, fname in (("ka", "feed.xml"), ("en", "feed_en.xml")):
