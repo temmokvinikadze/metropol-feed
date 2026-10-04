@@ -71,6 +71,11 @@ RENDER_URLS: dict[str, list[str]] = {}  # filled by prepare_renders()
 FLAT_IMAGE_URLS: dict[str, str] = {}  # flatID -> mirrored interior render URL
 
 
+def _safe_url(u: str) -> str:
+    from urllib.parse import quote
+    return quote(u, safe=":/?&=%#@+,;~")
+
+
 def mirror_flat_renders(out_dir: str, flats: list[dict]) -> None:
     """Copy each flat's CRM interior render into images/flats/ as JPG (Meta-friendly host/format).
     Already-mirrored files are reused; files of flats no longer listed are removed."""
@@ -82,43 +87,54 @@ def mirror_flat_renders(out_dir: str, flats: list[dict]) -> None:
     except ImportError:
         print("warn: Pillow missing; using CRM render URLs directly", file=sys.stderr)
         return
+    from concurrent.futures import ThreadPoolExecutor
+
     d = os.path.join(out_dir, "images", "flats")
     os.makedirs(d, exist_ok=True)
-    keep, new, failed = set(), 0, 0
+    jobs = []
     for f in flats:
         src = f.get("render") or ""
         if not src.startswith("http"):
             continue
         # file name changes when the CRM image changes
         tag = re.sub(r"[^A-Za-z0-9]", "", src.rsplit("/", 1)[-1].rsplit(".", 1)[0])[-20:]
-        name = f"MP-{f['flatID']}-{tag}.jpg"
+        jobs.append((str(f["flatID"]), _safe_url(src), f"MP-{f['flatID']}-{tag}.jpg"))
+
+    def work(job):
+        fid, src, name = job
         path = os.path.join(d, name)
-        if not os.path.exists(path):
-            try:
-                req = urllib.request.Request(src, headers={"User-Agent": UA})
-                with urllib.request.urlopen(req, timeout=60) as r:
-                    im = Image.open(BytesIO(r.read()))
-                    im.load()
-                if im.mode != "RGB":
-                    bg = Image.new("RGB", im.size, (255, 255, 255))
-                    bg.paste(im, mask=im.convert("RGBA").split()[-1])
-                    im = bg
-                if max(im.size) > 1600:
-                    im.thumbnail((1600, 1600))
-                im.save(path, "JPEG", quality=85, optimize=True, progressive=True)
-                new += 1
-            except Exception as e:
-                failed += 1
-                print(f"warn: flat render {src}: {e}", file=sys.stderr)
-                continue
-        keep.add(name)
-        FLAT_IMAGE_URLS[str(f["flatID"])] = f"{IMAGE_BASE_URL}/images/flats/{name}"
+        if os.path.exists(path):
+            return fid, name, "cached"
+        try:
+            req = urllib.request.Request(src, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=25) as r:
+                im = Image.open(BytesIO(r.read()))
+                im.load()
+            if im.mode != "RGB":
+                bg = Image.new("RGB", im.size, (255, 255, 255))
+                bg.paste(im, mask=im.convert("RGBA").split()[-1])
+                im = bg
+            if max(im.size) > 1600:
+                im.thumbnail((1600, 1600))
+            im.save(path, "JPEG", quality=85, optimize=True, progressive=True)
+            return fid, name, "new"
+        except Exception as e:
+            print(f"warn: flat render {src}: {e}", file=sys.stderr)
+            return fid, name, "failed"
+
+    keep, stats = set(), {"cached": 0, "new": 0, "failed": 0}
+    with ThreadPoolExecutor(max_workers=12) as ex:
+        for fid, name, st in ex.map(work, jobs):
+            stats[st] += 1
+            if st != "failed":
+                keep.add(name)
+                FLAT_IMAGE_URLS[fid] = f"{IMAGE_BASE_URL}/images/flats/{name}"
     removed = 0
     for fn in os.listdir(d):
         if fn not in keep:
             os.remove(os.path.join(d, fn))
             removed += 1
-    print(f"flat renders: {len(keep)} mirrored ({new} new, {removed} removed, {failed} failed)")
+    print(f"flat renders: {len(keep)} mirrored {stats}, {removed} removed")
 
 
 def prepare_renders(out_dir: str) -> None:
@@ -280,7 +296,7 @@ def build_item(flat: dict, project: dict, project_title: str, lang: str, rate: f
     renders = RENDER_URLS.get(slug) or [BASE + PROJECT_FALLBACK_IMAGE.get(slug, DEFAULT_IMAGE)]
     # Main image = the flat's own 3D interior render from the CRM; project renders as extras.
     # Flats without one fall back to the project exterior render.
-    image = FLAT_IMAGE_URLS.get(str(flat.get("flatID"))) or plan or renders[0]
+    image = FLAT_IMAGE_URLS.get(str(flat.get("flatID"))) or (_safe_url(plan) if plan else renders[0])
     extra_imgs = []  # interior render only; no exterior shots
 
     city_ka = flat.get("city") or ""
