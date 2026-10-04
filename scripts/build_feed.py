@@ -37,7 +37,9 @@ INCLUDE_PROJECTS = {
 
 # Price in the site data is USD. Set PRICE_CURRENCY=GEL to convert with /api/rate.
 PRICE_CURRENCY = os.environ.get("PRICE_CURRENCY", "GEL").upper()
-MIN_ITEMS = int(os.environ.get("MIN_ITEMS", "50"))  # safety net: don't publish an empty feed
+MIN_ITEMS = int(os.environ.get("MIN_ITEMS", "50"))
+# Only list flats that have a 3D interior render (no 2D plans / exterior fallbacks)
+REQUIRE_INTERIOR_RENDER = os.environ.get("REQUIRE_INTERIOR_RENDER", "1") == "1"  # safety net: don't publish an empty feed
 
 # Fallback images for units that have no render in the CRM
 PROJECT_FALLBACK_IMAGE = {
@@ -128,12 +130,22 @@ def mirror_flat_renders(out_dir: str, flats: list[dict]) -> None:
             print(f"warn: flat render {src}: {e}", file=sys.stderr)
             return fid, name, "failed"
 
-    keep, stats = set(), {"cached": 0, "new": 0, "failed": 0}
+    from PIL import ImageStat  # type: ignore
+
+    def is_flat_drawing(path: str) -> bool:
+        """2D technical plans are near-greyscale; 3D interior renders are colourful."""
+        with Image.open(path) as im:
+            return ImageStat.Stat(im.convert("HSV").resize((200, 200))).mean[1] < 8
+
+    keep, stats = set(), {"cached": 0, "new": 0, "failed": 0, "plan_2d": 0}
     with ThreadPoolExecutor(max_workers=8) as ex:
         for fid, name, st in ex.map(work, jobs):
             stats[st] += 1
             if st != "failed":
                 keep.add(name)
+                if is_flat_drawing(os.path.join(d, name)):
+                    stats["plan_2d"] += 1
+                    continue
                 FLAT_IMAGE_URLS[fid] = f"{IMAGE_BASE_URL}/images/flats/{name}"
     removed = 0
     for fn in os.listdir(d):
@@ -436,6 +448,11 @@ def main(out_dir: str = ".") -> int:
         and (not INCLUDE_PROJECTS or proj[f["projectID"]]["slug"] in INCLUDE_PROJECTS)
     ]
     mirror_flat_renders(out_dir, selected)
+    if FLAT_IMAGE_URLS and REQUIRE_INTERIOR_RENDER:
+        dropped = [f for f in selected if str(f["flatID"]) not in FLAT_IMAGE_URLS]
+        selected = [f for f in selected if str(f["flatID"]) in FLAT_IMAGE_URLS]
+        print(f"skipped {len(dropped)} flats without a 3D interior render: "
+              + ", ".join(f"MP-{f['flatID']}" for f in dropped))
 
     stats = {}
     for lang, fname in (("ka", "feed.xml"), ("en", "feed_en.xml")):
