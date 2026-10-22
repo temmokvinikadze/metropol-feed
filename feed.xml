@@ -209,23 +209,6 @@
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
-<g:id>MP-123192</g:id>
-<g:title>3-საძინებლიანი ბინა, 143.4 მ² – ქავთარაძე, თბილისი</g:title>
-<g:description>„მეტროპოლის“ პროექტი „ქავთარაძე“, თბილისი. ბინა N1917, სართული 19, 143.4 მ². 3-საძინებლიანი. საცხოვრებელი ფართი 116.8 მ². აივანი 26.6 მ². ხედი: ქუჩა/დრიმ თაუნი. 5 628 ₾ / მ². ჩაბარება: 30/06/2027.</g:description>
-<g:availability>in stock</g:availability>
-<g:condition>new</g:condition>
-<g:price>807105.00 GEL</g:price>
-<g:link>https://www.metropol.ge/projects/kavtaradze-a2/floor-19/apartment-1917</g:link>
-<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-123192-17333018281917.jpg</g:image_link>
-<g:brand>Metropol</g:brand>
-<g:product_type>თბილისი &gt; ქავთარაძე &gt; 3-საძინებლიანი</g:product_type>
-<g:custom_label_0>ქავთარაძე</g:custom_label_0>
-<g:custom_label_1>თბილისი</g:custom_label_1>
-<g:custom_label_2>3-საძინებლიანი</g:custom_label_2>
-<g:custom_label_3>200-350k</g:custom_label_3>
-<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
-</item>
-<item>
 <g:id>MP-123193</g:id>
 <g:title>3-საძინებლიანი ბინა, 143.5 მ² – ქავთარაძე, თბილისი</g:title>
 <g:description>„მეტროპოლის“ პროექტი „ქავთარაძე“, თბილისი. ბინა N2017, სართული 20, 143.5 მ². 3-საძინებლიანი. საცხოვრებელი ფართი 116.9 მ². აივანი 26.6 მ². ხედი: ქუჩა/დრიმ თაუნი. 5 628 ₾ / მ². ჩაბარება: 30/06/2027.</g:description>
@@ -1909,6 +1892,23 @@
 <g:custom_label_4>საცხოვრებელი ბინა</g:custom_label_4>
 </item>
 <item>
+<g:id>MP-206892</g:id>
+<g:title>ბინა, 88.5 მ² – ქავთარაძე, თბილისი</g:title>
+<g:description>„მეტროპოლის“ პროექტი „ქავთარაძე“, თბილისი. ბინა N2511, სართული 25, 88.5 მ². საცხოვრებელი ფართი 69.6 მ². აივანი 18.9 მ². ხედი: ქუჩა. 7 096 ₾ / მ². ჩაბარება: 30/06/2027.</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>627980.00 GEL</g:price>
+<g:link>https://www.metropol.ge/projects/kavtaradze-a1/floor-25/apartment-2511</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-206892-17691029942511.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>თბილისი &gt; ქავთარაძე &gt; ბინა</g:product_type>
+<g:custom_label_0>ქავთარაძე</g:custom_label_0>
+<g:custom_label_1>თბილისი</g:custom_label_1>
+<g:custom_label_2>ბინა</g:custom_label_2>
+<g:custom_label_3>200-350k</g:custom_label_3>
+<g:custom_label_4>საცხოვრებელი ბინა</g:custom_label_4>
+</item>
+<item>
 <g:id>MP-206893</g:id>
 <g:title>ბინა, 88.5 მ² – ქავთარაძე, თბილისი</g:title>
 <g:description>„მეტროპოლის“ პროექტი „ქავთარაძე“, თბილისი. ბინა N2511, სართული 25, 88.5 მ². საცხოვრებელი ფართი 69.6 მ². აივანი 18.9 მ². ხედი: ეზო. 7 283 ₾ / მ². ჩაბარება: 30/06/2027.</g:description>
@@ -1968,23 +1968,6 @@
 <g:price>435382.00 GEL</g:price>
 <g:link>https://www.metropol.ge/projects/kavtaradze-a2/floor-25/apartment-2513</g:link>
 <g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-206897-17691030432513.jpg</g:image_link>
-<g:brand>Metropol</g:brand>
-<g:product_type>თბილისი &gt; ქავთარაძე &gt; ბინა</g:product_type>
-<g:custom_label_0>ქავთარაძე</g:custom_label_0>
-<g:custom_label_1>თბილისი</g:custom_label_1>
-<g:custom_label_2>ბინა</g:custom_label_2>
-<g:custom_label_3>120-200k</g:custom_label_3>
-<g:custom_label_4>საცხოვრებელი ბინა</g:custom_label_4>
-</item>
-<item>
-<g:id>MP-206898</g:id>
-<g:title>ბინა, 62 მ² – ქავთარაძე, თბილისი</g:title>
-<g:description>„მეტროპოლის“ პროექტი „ქავთარაძე“, თბილისი. ბინა N2514, სართული 25, 62 მ². საცხოვრებელი ფართი 53.3 მ². აივანი 8.7 მ². ხედი: ქუჩა. 6 740 ₾ / მ². ჩაბარება: 30/06/2027.</g:description>
-<g:availability>in stock</g:availability>
-<g:condition>new</g:condition>
-<g:price>417880.00 GEL</g:price>
-<g:link>https://www.metropol.ge/projects/kavtaradze-a1/floor-25/apartment-2514</g:link>
-<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-206898-17691029942514.jpg</g:image_link>
 <g:brand>Metropol</g:brand>
 <g:product_type>თბილისი &gt; ქავთარაძე &gt; ბინა</g:product_type>
 <g:custom_label_0>ქავთარაძე</g:custom_label_0>
@@ -2941,21 +2924,6 @@
 <g:custom_label_3>200-350k</g:custom_label_3>
 </item>
 <item>
-<g:id>MP-257034</g:id>
-<g:title>ბინა, 53.4 მ² – ორთაჭალა, </g:title>
-<g:description>„მეტროპოლის“ პროექტი „ორთაჭალა“, . ბინა N320, სართული 24, 53.4 მ². საცხოვრებელი ფართი 40.6 მ². აივანი 12.8 მ². ხედი: ფანტანი / მტკვარი. 6 117 ₾ / მ².</g:description>
-<g:availability>in stock</g:availability>
-<g:condition>new</g:condition>
-<g:price>326629.00 GEL</g:price>
-<g:link>https://www.metropol.ge/projects/ortachala-a1/floor-24/apartment-320</g:link>
-<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-257034-1791054632320.jpg</g:image_link>
-<g:brand>Metropol</g:brand>
-<g:product_type>ორთაჭალა &gt; ბინა</g:product_type>
-<g:custom_label_0>ორთაჭალა</g:custom_label_0>
-<g:custom_label_2>ბინა</g:custom_label_2>
-<g:custom_label_3>120-200k</g:custom_label_3>
-</item>
-<item>
 <g:id>MP-257035</g:id>
 <g:title>ბინა, 102.5 მ² – ორთაჭალა, </g:title>
 <g:description>„მეტროპოლის“ პროექტი „ორთაჭალა“, . ბინა N305, სართული 24, 102.5 მ². საცხოვრებელი ფართი 73.2 მ². აივანი 29.3 მ². ხედი: გორგასალი / მთა / გულია. 5 000 ₾ / მ².</g:description>
@@ -3521,23 +3489,6 @@
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
-<g:id>MP-93163</g:id>
-<g:title>2-საძინებლიანი ბინა, 107.4 მ² – ორთაჭალა, თბილისი</g:title>
-<g:description>„მეტროპოლის“ პროექტი „ორთაჭალა“, თბილისი. ბინა N38, სართული 7, 107.4 მ². 2-საძინებლიანი. საცხოვრებელი ფართი 78.2 მ². აივანი 29.2 მ². ხედი: გულია/მტკვარი / გორგასალი. 4 415 ₾ / მ². ჩაბარება: 30/06/2028.</g:description>
-<g:availability>in stock</g:availability>
-<g:condition>new</g:condition>
-<g:price>474215.00 GEL</g:price>
-<g:link>https://www.metropol.ge/projects/ortachala-a1/floor-7/apartment-38</g:link>
-<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-93163-179105342738.jpg</g:image_link>
-<g:brand>Metropol</g:brand>
-<g:product_type>თბილისი &gt; ორთაჭალა &gt; 2-საძინებლიანი</g:product_type>
-<g:custom_label_0>ორთაჭალა</g:custom_label_0>
-<g:custom_label_1>თბილისი</g:custom_label_1>
-<g:custom_label_2>2-საძინებლიანი</g:custom_label_2>
-<g:custom_label_3>120-200k</g:custom_label_3>
-<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
-</item>
-<item>
 <g:id>MP-93219</g:id>
 <g:title>2-საძინებლიანი ბინა, 101.4 მ² – ორთაჭალა, თბილისი</g:title>
 <g:description>„მეტროპოლის“ პროექტი „ორთაჭალა“, თბილისი. ბინა N62, სართული 8, 101.4 მ². 2-საძინებლიანი. საცხოვრებელი ფართი 72 მ². აივანი 29.4 მ². ხედი: გულია / მტკვარი/ გორგასალი. 4 545 ₾ / მ². ჩაბარება: 30/06/2028.</g:description>
@@ -3640,23 +3591,6 @@
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
-<g:id>MP-93322</g:id>
-<g:title>1-საძინებლიანი ბინა, 64.1 მ² – ორთაჭალა, თბილისი</g:title>
-<g:description>„მეტროპოლის“ პროექტი „ორთაჭალა“, თბილისი. ბინა N117, სართული 12, 64.1 მ². 1-საძინებლიანი. საცხოვრებელი ფართი 50.5 მ². აივანი 13.6 მ². ხედი: გულია/მტკვარი. 5 117 ₾ / მ². ჩაბარება: 30/06/2028.</g:description>
-<g:availability>in stock</g:availability>
-<g:condition>new</g:condition>
-<g:price>327979.00 GEL</g:price>
-<g:link>https://www.metropol.ge/projects/ortachala-a1/floor-12/apartment-117</g:link>
-<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-93322-1791053683117.jpg</g:image_link>
-<g:brand>Metropol</g:brand>
-<g:product_type>თბილისი &gt; ორთაჭალა &gt; 1-საძინებლიანი</g:product_type>
-<g:custom_label_0>ორთაჭალა</g:custom_label_0>
-<g:custom_label_1>თბილისი</g:custom_label_1>
-<g:custom_label_2>1-საძინებლიანი</g:custom_label_2>
-<g:custom_label_3>120-200k</g:custom_label_3>
-<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
-</item>
-<item>
 <g:id>MP-93323</g:id>
 <g:title>2-საძინებლიანი ბინა, 107.4 მ² – ორთაჭალა, თბილისი</g:title>
 <g:description>„მეტროპოლის“ პროექტი „ორთაჭალა“, თბილისი. ბინა N118, სართული 12, 107.4 მ². 2-საძინებლიანი. საცხოვრებელი ფართი 78.2 მ². აივანი 29.2 მ². ხედი: გულია/მტკვარი / გორგასალი. 4 519 ₾ / მ². ჩაბარება: 30/06/2028.</g:description>
@@ -3671,6 +3605,23 @@
 <g:custom_label_1>თბილისი</g:custom_label_1>
 <g:custom_label_2>2-საძინებლიანი</g:custom_label_2>
 <g:custom_label_3>120-200k</g:custom_label_3>
+<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
+</item>
+<item>
+<g:id>MP-93342</g:id>
+<g:title>3-საძინებლიანი ბინა, 123.8 მ² – ორთაჭალა, თბილისი</g:title>
+<g:description>„მეტროპოლის“ პროექტი „ორთაჭალა“, თბილისი. ბინა N121, სართული 12, 123.8 მ². 3-საძინებლიანი. საცხოვრებელი ფართი 91.3 მ². აივანი 32.5 მ². ხედი: გულია / მტკვარი/ გორგასალი. 4 545 ₾ / მ². ჩაბარება: 30/06/2028.</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>562705.00 GEL</g:price>
+<g:link>https://www.metropol.ge/projects/ortachala-b1/floor-12/apartment-121</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-93342-1791055158121.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>თბილისი &gt; ორთაჭალა &gt; 3-საძინებლიანი</g:product_type>
+<g:custom_label_0>ორთაჭალა</g:custom_label_0>
+<g:custom_label_1>თბილისი</g:custom_label_1>
+<g:custom_label_2>3-საძინებლიანი</g:custom_label_2>
+<g:custom_label_3>200-350k</g:custom_label_3>
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
