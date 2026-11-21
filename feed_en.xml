@@ -175,23 +175,6 @@
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
-<g:id>MP-123191</g:id>
-<g:title>1-bedroom flat, 143.2 m² – Kavtaradze, Tbilisi</g:title>
-<g:description>Metropol – Kavtaradze, Tbilisi. Flat #1817, floor 18, 143.2 m². 1-bedroom. Living area 116.6 m². Balcony 26.6 m². View: ქუჩა/დრიმ თაუნი. 5 546 ₾ per m². Completion: 30/06/2027.</g:description>
-<g:availability>in stock</g:availability>
-<g:condition>new</g:condition>
-<g:price>794126.00 GEL</g:price>
-<g:link>https://www.metropol.ge/en/projects/kavtaradze-a2/floor-18/apartment-1817</g:link>
-<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-123191-17333018041817.jpg</g:image_link>
-<g:brand>Metropol</g:brand>
-<g:product_type>Tbilisi &gt; Kavtaradze &gt; 1-bedroom</g:product_type>
-<g:custom_label_0>Kavtaradze</g:custom_label_0>
-<g:custom_label_1>Tbilisi</g:custom_label_1>
-<g:custom_label_2>1-bedroom</g:custom_label_2>
-<g:custom_label_3>200-350k</g:custom_label_3>
-<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
-</item>
-<item>
 <g:id>MP-123192</g:id>
 <g:title>3-bedroom flat, 143.4 m² – Kavtaradze, Tbilisi</g:title>
 <g:description>Metropol – Kavtaradze, Tbilisi. Flat #1917, floor 19, 143.4 m². 3-bedroom. Living area 116.8 m². Balcony 26.6 m². View: ქუჩა/დრიმ თაუნი. 5 618 ₾ per m². Completion: 30/06/2027.</g:description>
@@ -325,6 +308,23 @@
 <g:custom_label_1>Tbilisi</g:custom_label_1>
 <g:custom_label_2>3-bedroom</g:custom_label_2>
 <g:custom_label_3>200-350k</g:custom_label_3>
+<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
+</item>
+<item>
+<g:id>MP-124377</g:id>
+<g:title>1-bedroom flat, 57.7 m² – Ortachala, Tbilisi</g:title>
+<g:description>Metropol – Ortachala, Tbilisi. Flat #205, floor 17, 57.7 m². 1-bedroom. Living area 44.4 m². Balcony 13.3 m². View: გულია / მტკვარი/ გორგასალი. 6 119 ₾ per m². Completion: 30/06/2028.</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>353040.00 GEL</g:price>
+<g:link>https://www.metropol.ge/en/projects/ortachala-b1/floor-17/apartment-205</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-124377-1791055306205.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>Tbilisi &gt; Ortachala &gt; 1-bedroom</g:product_type>
+<g:custom_label_0>Ortachala</g:custom_label_0>
+<g:custom_label_1>Tbilisi</g:custom_label_1>
+<g:custom_label_2>1-bedroom</g:custom_label_2>
+<g:custom_label_3>120-200k</g:custom_label_3>
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
@@ -549,23 +549,6 @@
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
-<g:id>MP-134290</g:id>
-<g:title>1-bedroom flat, 53.1 m² – Ortachala, Tbilisi</g:title>
-<g:description>Metropol – Ortachala, Tbilisi. Flat #231, floor 19, 53.1 m². 1-bedroom. Living area 40.6 m². Balcony 12.5 m². View: გორგასალი / მტკვარი. 6 378 ₾ per m². Completion: 30/06/2028.</g:description>
-<g:availability>in stock</g:availability>
-<g:condition>new</g:condition>
-<g:price>338661.00 GEL</g:price>
-<g:link>https://www.metropol.ge/en/projects/ortachala-a1/floor-19/apartment-231</g:link>
-<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-134290-1791054242231.jpg</g:image_link>
-<g:brand>Metropol</g:brand>
-<g:product_type>Tbilisi &gt; Ortachala &gt; 1-bedroom</g:product_type>
-<g:custom_label_0>Ortachala</g:custom_label_0>
-<g:custom_label_1>Tbilisi</g:custom_label_1>
-<g:custom_label_2>1-bedroom</g:custom_label_2>
-<g:custom_label_3>120-200k</g:custom_label_3>
-<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
-</item>
-<item>
 <g:id>MP-134292</g:id>
 <g:title>3-bedroom flat, 124.6 m² – Ortachala, Tbilisi</g:title>
 <g:description>Metropol – Ortachala, Tbilisi. Flat #233, floor 19, 124.6 m². 3-bedroom. Living area 92.1 m². Balcony 32.5 m². View: გორგასალი / მტკვარი / მთა. 5 548 ₾ per m². Completion: 30/06/2028.</g:description>
@@ -583,23 +566,6 @@
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
-<g:id>MP-134295</g:id>
-<g:title>1-bedroom flat, 57.6 m² – Ortachala, Tbilisi</g:title>
-<g:description>Metropol – Ortachala, Tbilisi. Flat #236, floor 19, 57.6 m². 1-bedroom. Living area 45.1 m². Balcony 12.5 m². View: გორგასალი/მთა. 6 456 ₾ per m². Completion: 30/06/2028.</g:description>
-<g:availability>in stock</g:availability>
-<g:condition>new</g:condition>
-<g:price>371841.00 GEL</g:price>
-<g:link>https://www.metropol.ge/en/projects/ortachala-a1/floor-19/apartment-236</g:link>
-<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-134295-1791054242236.jpg</g:image_link>
-<g:brand>Metropol</g:brand>
-<g:product_type>Tbilisi &gt; Ortachala &gt; 1-bedroom</g:product_type>
-<g:custom_label_0>Ortachala</g:custom_label_0>
-<g:custom_label_1>Tbilisi</g:custom_label_1>
-<g:custom_label_2>1-bedroom</g:custom_label_2>
-<g:custom_label_3>120-200k</g:custom_label_3>
-<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
-</item>
-<item>
 <g:id>MP-134300</g:id>
 <g:title>2-bedroom flat, 102.4 m² – Ortachala, Tbilisi</g:title>
 <g:description>Metropol – Ortachala, Tbilisi. Flat #225, floor 19, 102.4 m². 2-bedroom. Living area 73.1 m². Balcony 29.3 m². View: გორგასალი / მთა / გულია. 5 522 ₾ per m². Completion: 30/06/2028.</g:description>
@@ -614,6 +580,23 @@
 <g:custom_label_1>Tbilisi</g:custom_label_1>
 <g:custom_label_2>2-bedroom</g:custom_label_2>
 <g:custom_label_3>200-350k</g:custom_label_3>
+<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
+</item>
+<item>
+<g:id>MP-134307</g:id>
+<g:title>1-bedroom flat, 48.3 m² – Ortachala, Tbilisi</g:title>
+<g:description>Metropol – Ortachala, Tbilisi. Flat #232, floor 19, 48.3 m². 1-bedroom. Living area 35.8 m². Balcony 12.5 m². View: გულია / მტკვარი. 6 715 ₾ per m². Completion: 30/06/2028.</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>324326.00 GEL</g:price>
+<g:link>https://www.metropol.ge/en/projects/ortachala-b1/floor-19/apartment-232</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-134307-1791055436232.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>Tbilisi &gt; Ortachala &gt; 1-bedroom</g:product_type>
+<g:custom_label_0>Ortachala</g:custom_label_0>
+<g:custom_label_1>Tbilisi</g:custom_label_1>
+<g:custom_label_2>1-bedroom</g:custom_label_2>
+<g:custom_label_3>120-200k</g:custom_label_3>
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
@@ -821,23 +804,6 @@
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
-<g:id>MP-134327</g:id>
-<g:title>1-bedroom flat, 57.6 m² – Ortachala, Tbilisi</g:title>
-<g:description>Metropol – Ortachala, Tbilisi. Flat #252, floor 20, 57.6 m². 1-bedroom. Living area 45.1 m². Balcony 12.5 m². View: გორგასალი/მთა. 6 456 ₾ per m². Completion: 30/06/2028.</g:description>
-<g:availability>in stock</g:availability>
-<g:condition>new</g:condition>
-<g:price>371841.00 GEL</g:price>
-<g:link>https://www.metropol.ge/en/projects/ortachala-a1/floor-20/apartment-252</g:link>
-<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-134327-1791054242252.jpg</g:image_link>
-<g:brand>Metropol</g:brand>
-<g:product_type>Tbilisi &gt; Ortachala &gt; 1-bedroom</g:product_type>
-<g:custom_label_0>Ortachala</g:custom_label_0>
-<g:custom_label_1>Tbilisi</g:custom_label_1>
-<g:custom_label_2>1-bedroom</g:custom_label_2>
-<g:custom_label_3>120-200k</g:custom_label_3>
-<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
-</item>
-<item>
 <g:id>MP-134332</g:id>
 <g:title>2-bedroom flat, 102.4 m² – Ortachala, Tbilisi</g:title>
 <g:description>Metropol – Ortachala, Tbilisi. Flat #241, floor 20, 102.4 m². 2-bedroom. Living area 73.1 m². Balcony 29.3 m². View: გორგასალი / მთა / გულია. 5 522 ₾ per m². Completion: 30/06/2028.</g:description>
@@ -1042,6 +1008,23 @@
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
+<g:id>MP-134358</g:id>
+<g:title>1-bedroom flat, 57.2 m² – Ortachala, Tbilisi</g:title>
+<g:description>Metropol – Ortachala, Tbilisi. Flat #267, floor 21, 57.2 m². 1-bedroom. Living area 44.9 m². Balcony 12.3 m². View: გორგასალი/მთა. 6 637 ₾ per m². Completion: 30/06/2028.</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>379640.00 GEL</g:price>
+<g:link>https://www.metropol.ge/en/projects/ortachala-a1/floor-21/apartment-267</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-134358-1791054426267.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>Tbilisi &gt; Ortachala &gt; 1-bedroom</g:product_type>
+<g:custom_label_0>Ortachala</g:custom_label_0>
+<g:custom_label_1>Tbilisi</g:custom_label_1>
+<g:custom_label_2>1-bedroom</g:custom_label_2>
+<g:custom_label_3>120-200k</g:custom_label_3>
+<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
+</item>
+<item>
 <g:id>MP-134360</g:id>
 <g:title>1-bedroom flat, 57.7 m² – Ortachala, Tbilisi</g:title>
 <g:description>Metropol – Ortachala, Tbilisi. Flat #269, floor 21, 57.7 m². 1-bedroom. Living area 44.4 m². Balcony 13.3 m². View: გორგასალი/მთა. 6 728 ₾ per m². Completion: 30/06/2028.</g:description>
@@ -1090,6 +1073,23 @@
 <g:custom_label_1>Tbilisi</g:custom_label_1>
 <g:custom_label_2>2-bedroom</g:custom_label_2>
 <g:custom_label_3>200-350k</g:custom_label_3>
+<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
+</item>
+<item>
+<g:id>MP-134371</g:id>
+<g:title>1-bedroom flat, 48.3 m² – Ortachala, Tbilisi</g:title>
+<g:description>Metropol – Ortachala, Tbilisi. Flat #264, floor 21, 48.3 m². 1-bedroom. Living area 35.8 m². Balcony 12.5 m². View: გულია / მტკვარი. 6 767 ₾ per m². Completion: 30/06/2028.</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>326831.00 GEL</g:price>
+<g:link>https://www.metropol.ge/en/projects/ortachala-b1/floor-21/apartment-264</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-134371-1791055437264.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>Tbilisi &gt; Ortachala &gt; 1-bedroom</g:product_type>
+<g:custom_label_0>Ortachala</g:custom_label_0>
+<g:custom_label_1>Tbilisi</g:custom_label_1>
+<g:custom_label_2>1-bedroom</g:custom_label_2>
+<g:custom_label_3>120-200k</g:custom_label_3>
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
@@ -1464,23 +1464,6 @@
 <g:custom_label_1>Tbilisi</g:custom_label_1>
 <g:custom_label_2>Flat</g:custom_label_2>
 <g:custom_label_3>200-350k</g:custom_label_3>
-<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
-</item>
-<item>
-<g:id>MP-178614</g:id>
-<g:title>Flat, 60.7 m² – Kavtaradze, Tbilisi</g:title>
-<g:description>Metropol – Kavtaradze, Tbilisi. Flat #2402, floor 24, 60.7 m². Living area 49.4 m². Balcony 11.3 m². View: ეზო. 6 650 ₾ per m². Completion: 30/06/2027.</g:description>
-<g:availability>in stock</g:availability>
-<g:condition>new</g:condition>
-<g:price>403656.00 GEL</g:price>
-<g:link>https://www.metropol.ge/en/projects/kavtaradze-a1/floor-24/apartment-2402</g:link>
-<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-178614-17937032312402.jpg</g:image_link>
-<g:brand>Metropol</g:brand>
-<g:product_type>Tbilisi &gt; Kavtaradze &gt; Flat</g:product_type>
-<g:custom_label_0>Kavtaradze</g:custom_label_0>
-<g:custom_label_1>Tbilisi</g:custom_label_1>
-<g:custom_label_2>Flat</g:custom_label_2>
-<g:custom_label_3>120-200k</g:custom_label_3>
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
@@ -2486,6 +2469,21 @@
 <g:custom_label_3>120-200k</g:custom_label_3>
 </item>
 <item>
+<g:id>MP-256983</g:id>
+<g:title>Flat, 48.4 m² – Ortachala, </g:title>
+<g:description>Metropol – Ortachala, . Flat #280, floor 22, 48.4 m². Living area 35.9 m². Balcony 12.5 m². View: გულია / მტკვარი. 6 767 ₾ per m².</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>327508.00 GEL</g:price>
+<g:link>https://www.metropol.ge/en/projects/ortachala-b1/floor-22/apartment-280</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-256983-1791055438280.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>Ortachala &gt; Flat</g:product_type>
+<g:custom_label_0>Ortachala</g:custom_label_0>
+<g:custom_label_2>Flat</g:custom_label_2>
+<g:custom_label_3>120-200k</g:custom_label_3>
+</item>
+<item>
 <g:id>MP-256984</g:id>
 <g:title>Flat, 124.8 m² – Ortachala, </g:title>
 <g:description>Metropol – Ortachala, . Flat #281, floor 22, 124.8 m². Living area 92.3 m². Balcony 32.5 m². View: გულია / მტკვარი / გორგასალი. 5 354 ₾ per m².</g:description>
@@ -2801,6 +2799,21 @@
 <g:custom_label_3>120-200k</g:custom_label_3>
 </item>
 <item>
+<g:id>MP-257010</g:id>
+<g:title>Flat, 48.4 m² – Ortachala, </g:title>
+<g:description>Metropol – Ortachala, . Flat #296, floor 23, 48.4 m². Living area 35.9 m². Balcony 12.5 m². View: გულია / მტკვარი. 6 819 ₾ per m².</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>330017.00 GEL</g:price>
+<g:link>https://www.metropol.ge/en/projects/ortachala-b1/floor-23/apartment-296</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-257010-1791055439296.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>Ortachala &gt; Flat</g:product_type>
+<g:custom_label_0>Ortachala</g:custom_label_0>
+<g:custom_label_2>Flat</g:custom_label_2>
+<g:custom_label_3>120-200k</g:custom_label_3>
+</item>
+<item>
 <g:id>MP-257011</g:id>
 <g:title>Flat, 124.8 m² – Ortachala, </g:title>
 <g:description>Metropol – Ortachala, . Flat #297, floor 23, 124.8 m². Living area 92.3 m². Balcony 32.5 m². View: გულია / მტკვარი / გორგასალი. 5 406 ₾ per m².</g:description>
@@ -2824,6 +2837,21 @@
 <g:price>392973.00 GEL</g:price>
 <g:link>https://www.metropol.ge/en/projects/ortachala-b1/floor-23/apartment-298</g:link>
 <g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-257012-1791055439298.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>Ortachala &gt; Flat</g:product_type>
+<g:custom_label_0>Ortachala</g:custom_label_0>
+<g:custom_label_2>Flat</g:custom_label_2>
+<g:custom_label_3>120-200k</g:custom_label_3>
+</item>
+<item>
+<g:id>MP-257013</g:id>
+<g:title>Flat, 57.3 m² – Ortachala, </g:title>
+<g:description>Metropol – Ortachala, . Flat #299, floor 23, 57.3 m². Living area 45 m². Balcony 12.3 m². View: გულია / მტკვარი / გორგასალი. 6 378 ₾ per m².</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>365448.00 GEL</g:price>
+<g:link>https://www.metropol.ge/en/projects/ortachala-b1/floor-23/apartment-299</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-257013-1791055439299.jpg</g:image_link>
 <g:brand>Metropol</g:brand>
 <g:product_type>Ortachala &gt; Flat</g:product_type>
 <g:custom_label_0>Ortachala</g:custom_label_0>
@@ -3011,6 +3039,21 @@
 <g:custom_label_3>120-200k</g:custom_label_3>
 </item>
 <item>
+<g:id>MP-257029</g:id>
+<g:title>Flat, 57.3 m² – Ortachala, </g:title>
+<g:description>Metropol – Ortachala, . Flat #315, floor 24, 57.3 m². Living area 45 m². Balcony 12.3 m². View: გორგასალი / მთა. 6 689 ₾ per m².</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>383274.00 GEL</g:price>
+<g:link>https://www.metropol.ge/en/projects/ortachala-a1/floor-24/apartment-315</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-257029-1791054632315.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>Ortachala &gt; Flat</g:product_type>
+<g:custom_label_0>Ortachala</g:custom_label_0>
+<g:custom_label_2>Flat</g:custom_label_2>
+<g:custom_label_3>120-200k</g:custom_label_3>
+</item>
+<item>
 <g:id>MP-257032</g:id>
 <g:title>Flat, 102.1 m² – Ortachala, </g:title>
 <g:description>Metropol – Ortachala, . Flat #318, floor 24, 102.1 m². Living area 72.7 m². Balcony 29.4 m². View: გორგასალი / ფანტანი / მთა. 6 106 ₾ per m².</g:description>
@@ -3109,6 +3152,21 @@
 <g:price>344816.00 GEL</g:price>
 <g:link>https://www.metropol.ge/en/projects/ortachala-b1/floor-24/apartment-311</g:link>
 <g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-257041-1791055709311.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>Ortachala &gt; Flat</g:product_type>
+<g:custom_label_0>Ortachala</g:custom_label_0>
+<g:custom_label_2>Flat</g:custom_label_2>
+<g:custom_label_3>120-200k</g:custom_label_3>
+</item>
+<item>
+<g:id>MP-257042</g:id>
+<g:title>Flat, 48.4 m² – Ortachala, </g:title>
+<g:description>Metropol – Ortachala, . Flat #312, floor 24, 48.4 m². Living area 35.9 m². Balcony 12.5 m². View: გულია / მტკვარი. 6 819 ₾ per m².</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>330017.00 GEL</g:price>
+<g:link>https://www.metropol.ge/en/projects/ortachala-b1/floor-24/apartment-312</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-257042-1791055709312.jpg</g:image_link>
 <g:brand>Metropol</g:brand>
 <g:product_type>Ortachala &gt; Flat</g:product_type>
 <g:custom_label_0>Ortachala</g:custom_label_0>
@@ -3264,23 +3322,6 @@
 <g:custom_label_0>Ortachala</g:custom_label_0>
 <g:custom_label_2>Flat</g:custom_label_2>
 <g:custom_label_3>120-200k</g:custom_label_3>
-</item>
-<item>
-<g:id>MP-41273</g:id>
-<g:title>3-bedroom flat, 141.5 m² – Kavtaradze, Tbilisi</g:title>
-<g:description>Metropol – Kavtaradze, Tbilisi. Flat #1401, floor 14, 141.5 m². 3-bedroom. Living area 116.2 m². Balcony 25.3 m². View: ეზო. 5 387 ₾ per m². Completion: 30/06/2027.</g:description>
-<g:availability>in stock</g:availability>
-<g:condition>new</g:condition>
-<g:price>762320.00 GEL</g:price>
-<g:link>https://www.metropol.ge/en/projects/kavtaradze-a1/floor-14/apartment-1401</g:link>
-<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-41273-17937027341401.jpg</g:image_link>
-<g:brand>Metropol</g:brand>
-<g:product_type>Tbilisi &gt; Kavtaradze &gt; 3-bedroom</g:product_type>
-<g:custom_label_0>Kavtaradze</g:custom_label_0>
-<g:custom_label_1>Tbilisi</g:custom_label_1>
-<g:custom_label_2>3-bedroom</g:custom_label_2>
-<g:custom_label_3>200-350k</g:custom_label_3>
-<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
 <item>
 <g:id>MP-41289</g:id>
@@ -4061,6 +4102,23 @@
 <g:custom_label_0>Ortachala</g:custom_label_0>
 <g:custom_label_1>Tbilisi</g:custom_label_1>
 <g:custom_label_2>2-bedroom</g:custom_label_2>
+<g:custom_label_3>200-350k</g:custom_label_3>
+<g:custom_label_4>საცხოვრებელი</g:custom_label_4>
+</item>
+<item>
+<g:id>MP-93342</g:id>
+<g:title>3-bedroom flat, 123.8 m² – Ortachala, Tbilisi</g:title>
+<g:description>Metropol – Ortachala, Tbilisi. Flat #121, floor 12, 123.8 m². 3-bedroom. Living area 91.3 m². Balcony 32.5 m². View: გულია / მტკვარი/ გორგასალი. 5 094 ₾ per m². Completion: 30/06/2028.</g:description>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>630694.00 GEL</g:price>
+<g:link>https://www.metropol.ge/en/projects/ortachala-b1/floor-12/apartment-121</g:link>
+<g:image_link>https://raw.githubusercontent.com/temmokvinikadze/metropol-feed/main/images/flats/MP-93342-1791055158121.jpg</g:image_link>
+<g:brand>Metropol</g:brand>
+<g:product_type>Tbilisi &gt; Ortachala &gt; 3-bedroom</g:product_type>
+<g:custom_label_0>Ortachala</g:custom_label_0>
+<g:custom_label_1>Tbilisi</g:custom_label_1>
+<g:custom_label_2>3-bedroom</g:custom_label_2>
 <g:custom_label_3>200-350k</g:custom_label_3>
 <g:custom_label_4>საცხოვრებელი</g:custom_label_4>
 </item>
